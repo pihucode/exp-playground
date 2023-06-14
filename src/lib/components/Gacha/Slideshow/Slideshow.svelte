@@ -3,15 +3,70 @@
     Ref: https://svelte.dev/repl/7c0339d9aeb64b8c9b4bf402c71d791e?version=3.29.0
     */
 
-	import { images } from './imageData.js';
+	import { images } from './data.js';
 	import Slide from './Slide.svelte';
 	import Thumbnail from './Thumbnail.svelte';
 	import Caption from './Caption.svelte';
+	import BannerSlide from './BannerSlide.svelte';
 
 	/* IMAGE TO SHOW */
+	let isAnimating = false;
 	let imageShowingIndex = 0;
-	$: console.log(imageShowingIndex);
-	$: image = images[imageShowingIndex];
+	// $: console.log(imageShowingIndex);
+	// $: image = images[imageShowingIndex];
+
+	let isSlideIn = true;
+	let isSlideOut = false;
+	let image = images[imageShowingIndex];
+
+	const reset = () => {
+		isSlideIn = false;
+		isSlideOut = false;
+	};
+	const slideIn = () => {
+		reset();
+		setTimeout(() => {
+			isSlideIn = true;
+		}, 10);
+	};
+	const slideOut = () => {
+		reset();
+		setTimeout(() => {
+			isSlideOut = true;
+		}, 10);
+	};
+
+	$: {
+		slideOut();
+		setTimeout(() => {
+			image = images[imageShowingIndex];
+			slideIn();
+		}, 900);
+
+		// // slide out animation
+		// console.log('slide out');
+		// isSlideOut = true;
+		// // wait for the animation to finish
+		// setTimeout(() => {
+		// 	console.log('reset');
+		// 	isSlideOut = false;
+		// 	isSlideIn = true;
+
+		// 	setTimeout(() => {
+		// 		// console.log('slide in');
+		// 		// isSlideIn = true;
+		// 	}, 0.1 * 1000);
+		// }, 1 * 1000);
+
+		// console.log('change image');
+		// image = images[imageShowingIndex];
+		// isSlideIn = true;
+
+		// setTimeout(() => {
+		// 	isSlideOut = false;
+		// 	isSlideIn = false;
+		// }, 0.1 * 1000);
+	}
 
 	const nextSlide = () => {
 		if (imageShowingIndex === images.length - 1) {
@@ -37,7 +92,15 @@
 <div class="slideshow">
 	<!-- image gallery -->
 	<div class="container">
-		<Slide image={image.imgurl} altTag={image.name} attr={image.attribution} />
+		<!-- <Slide image={image.imgurl} altTag={image.name} attr={image.attribution} /> -->
+		<BannerSlide
+			image={image.imgurl}
+			altTag={image.name}
+			attr={image.attribution}
+			{isSlideIn}
+			{isSlideOut}
+			animation="img__slidein__animation"
+		/>
 	</div>
 
 	<!-- Image text -->
