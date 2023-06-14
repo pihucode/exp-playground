@@ -41,12 +41,16 @@
 			probability: 0.75,
 			items: [
 				{
+					rank: 5,
 					name: 'Featured Elite Trait',
-					type: 'trait'
+					type: 'trait',
+					isFeatured: true
 				},
 				{
+					rank: 5,
 					name: 'Rare MYO',
-					type: 'MYO'
+					type: 'MYO',
+					isFeatured: true
 				}
 			]
 		},
@@ -54,8 +58,10 @@
 			probability: 0.25,
 			items: [
 				{
+					rank: 5,
 					name: 'Rare MYO Ticket',
-					type: 'MYO'
+					type: 'MYO',
+					isFeatured: false
 				}
 			]
 		},
@@ -63,8 +69,10 @@
 			probability: 0.75,
 			items: [
 				{
+					rank: 4,
 					name: 'Featured Elite Trait Fragment',
-					type: 'trait_fragment'
+					type: 'trait_fragment',
+					isFeatured: true
 				}
 			]
 		},
@@ -72,12 +80,16 @@
 			probability: 0.25,
 			items: [
 				{
+					rank: 4,
 					name: 'Common Trait Ticket',
-					type: 'ticket'
+					type: 'ticket',
+					isFeatured: false
 				},
 				{
+					rank: 4,
 					name: 'MYO Fragment',
-					type: 'MYO_fragment'
+					type: 'MYO_fragment',
+					isFeatured: false
 				}
 			]
 		},
@@ -85,8 +97,10 @@
 			probability: 1,
 			items: [
 				{
+					rank: 3,
 					name: 'Common Trait Fragment',
-					type: 'trait_fragment'
+					type: 'trait_fragment',
+					isFeatured: false
 				}
 			]
 		}
