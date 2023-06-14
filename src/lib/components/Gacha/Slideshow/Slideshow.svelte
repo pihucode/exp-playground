@@ -10,9 +10,7 @@
 	import BannerSlide from './BannerSlide.svelte';
 
 	/* IMAGE TO SHOW */
-	let isAnimating = false;
 	let imageShowingIndex = 0;
-	// $: console.log(imageShowingIndex);
 	// $: image = images[imageShowingIndex];
 
 	let isSlideIn = true;
@@ -42,30 +40,6 @@
 			image = images[imageShowingIndex];
 			slideIn();
 		}, 900);
-
-		// // slide out animation
-		// console.log('slide out');
-		// isSlideOut = true;
-		// // wait for the animation to finish
-		// setTimeout(() => {
-		// 	console.log('reset');
-		// 	isSlideOut = false;
-		// 	isSlideIn = true;
-
-		// 	setTimeout(() => {
-		// 		// console.log('slide in');
-		// 		// isSlideIn = true;
-		// 	}, 0.1 * 1000);
-		// }, 1 * 1000);
-
-		// console.log('change image');
-		// image = images[imageShowingIndex];
-		// isSlideIn = true;
-
-		// setTimeout(() => {
-		// 	isSlideOut = false;
-		// 	isSlideIn = false;
-		// }, 0.1 * 1000);
 	}
 
 	const nextSlide = () => {
