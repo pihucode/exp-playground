@@ -1,25 +1,37 @@
 <script>
-	let circles = Array.from({ length: 150 }, (_, i) => i + 1);
+	let circles = Array.from({ length: 100 }, (_, i) => i + 1);
 </script>
 
 <div class="particles">
+	<div class="vignette__bottom" />
 	{#each circles as circle}
-		<div class="circle-container">
+		<div class="circles">
 			<div class="circle" />
 		</div>
 	{/each}
 </div>
 
 <style lang="scss">
-	.particles {
+	.vignette__bottom {
+		position: absolute;
+		bottom: 0;
 		width: 100%;
 		height: 100%;
-		overflow: hidden;
-		position: relative;
-		z-index: 100;
+		// gradient, fade at top
+		background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
 	}
 
-	.circle-container {
+	.particles {
+		width: 100%;
+		height: 40%;
+		overflow: hidden;
+		position: absolute;
+		bottom: 0;
+		z-index: 100;
+		pointer-events: none;
+	}
+
+	.circles {
 		$particleNum: 300;
 		$particleColor: hsl(180, 100%, 95%);
 
@@ -39,17 +51,15 @@
 				hsla(180, 100%, 80%, 0) 56%
 			);
 
-			animation: fadein-frames 200ms infinite, scale-frames 2s infinite;
+			animation: fade-frames 1s infinite, scale-frames 2s infinite;
 
 			@keyframes fade-frames {
 				0% {
 					opacity: 1;
 				}
-
 				50% {
 					opacity: 0.7;
 				}
-
 				100% {
 					opacity: 1;
 				}
@@ -59,11 +69,9 @@
 				0% {
 					transform: scale3d(0.4, 0.4, 1);
 				}
-
 				50% {
 					transform: scale3d(2.2, 2.2, 1);
 				}
-
 				100% {
 					transform: scale3d(0.4, 0.4, 1);
 				}
