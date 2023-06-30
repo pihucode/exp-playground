@@ -11,8 +11,9 @@
 	.container {
 		position: relative;
 		width: 100%;
-		height: 100vh;
+		height: 100%;
 		overflow: hidden;
+		font-size: 1.2rem;
 	}
 	.box__main {
 		position: absolute;
@@ -34,10 +35,10 @@
 	}
 	.box2 {
 		position: absolute;
-		left: 8%;
-		bottom: 12%;
-		width: 20%;
-		height: 20%;
+		left: 5rem;
+		bottom: 4.2rem;
+		width: 11.5rem;
+		height: 6.5rem;
 		background-color: rgb(172, 248, 79);
 	}
 	.box3 {
