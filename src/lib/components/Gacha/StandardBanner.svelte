@@ -59,7 +59,7 @@
 			items: [
 				{
 					rank: 5,
-					name: 'Rare MYO Ticket',
+					name: 'Rare MYO',
 					type: 'MYO',
 					isFeatured: false
 				}
