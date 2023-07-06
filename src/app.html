@@ -10,18 +10,18 @@
 
 <script>
     // set font-size for html based on window width
-    (function () {
-        const html = document.querySelector('html');
-        const setFontSize = () => {
-            const width = window.innerWidth;
-            const BASE_WIDTH = 16 * 60; // 16:9 aspect ratio
-            const BASE_FONT = 16;
-            const fontSize = width / BASE_WIDTH * BASE_FONT; //width < BASE_WIDTH ? width / BASE_WIDTH * BASE_FONT : BASE_FONT;
-            html.style.fontSize = fontSize + 'px';
-        };
-        setFontSize();
-        window.addEventListener('resize', setFontSize);
-    })();
+    // (function () {
+    //     const html = document.querySelector('html');
+    //     const setFontSize = () => {
+    //         const width = window.innerWidth;
+    //         const BASE_WIDTH = 16 * 60; // 16:9 aspect ratio
+    //         const BASE_FONT = 16;
+    //         const fontSize = width / BASE_WIDTH * BASE_FONT; //width < BASE_WIDTH ? width / BASE_WIDTH * BASE_FONT : BASE_FONT;
+    //         html.style.fontSize = fontSize + 'px';
+    //     };
+    //     setFontSize();
+    //     window.addEventListener('resize', setFontSize);
+    // })();
 </script>
 
 <body data-sveltekit-preload-data="hover" style="margin: 0;">
