@@ -1,9 +1,10 @@
 <script>
 	import GachaponAni from '$lib/components/Gacha/Animation/GachaponAni.svelte';
+	import StarSlamAni from '$lib/components/Gacha/Animation/StarSlamAni.svelte';
 </script>
 
 <div class="page">
-	<GachaponAni />
+	<StarSlamAni />
 </div>
 
 <style>
