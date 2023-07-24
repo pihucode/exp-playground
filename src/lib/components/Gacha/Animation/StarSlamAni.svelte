@@ -12,15 +12,17 @@
 		}
 	});
 
+	const playAnimation = () => {
+		currentIndex = 0;
+		// hide all the icons
+		icons.forEach((icon) => {
+			icon.isHidden = true;
+		});
+		animate();
+	};
+
 	const animate = () => {
-		// Reset the currentIndex when all icons have been animated
-		if (currentIndex >= icons.length) {
-			currentIndex = 0;
-			// hide all the icons
-			icons.forEach((icon) => {
-				icon.isHidden = true;
-			});
-		}
+		if (currentIndex >= icons.length) return;
 
 		// Animate the current icon and update the currentIndex
 		icons[currentIndex].isHidden = false;
@@ -37,13 +39,7 @@
 
 <div class="container">
 	<div class="controls">
-		<button
-			on:click={() => {
-				animate();
-			}}
-		>
-			Play Animation
-		</button>
+		<button on:click={playAnimation}> Play Animation </button>
 	</div>
 
 	<div class="stars">
